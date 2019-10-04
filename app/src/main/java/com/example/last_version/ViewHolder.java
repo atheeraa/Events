@@ -34,12 +34,13 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
 
 
-public void setDetails(Context context, String title, String img,String status, String time, String date, String by){
+public void setDetails(Context context, String title, String img,String status, String time, String date, String by, String location){
     CardView card ;
     TextView titleRow = (TextView)mView.findViewById(R.id.titleRow);
     TextView byRow = (TextView) mView.findViewById(R.id.byRow);
     TextView dateRow = (TextView) mView.findViewById(R.id.dateRow);
     TextView timeRow = (TextView) mView.findViewById(R.id.timeRow);
+    TextView locRow = (TextView) mView.findViewById(R.id.location);
     ImageView imgRow = (ImageView) mView.findViewById(R.id.imgRow);
     ImageView statusColor = (ImageView) mView.findViewById(R.id.statusColor) ;
     TextView statusRow = (TextView) mView.findViewById(R.id.status);
@@ -48,6 +49,7 @@ public void setDetails(Context context, String title, String img,String status, 
     byRow.setText(by);
     dateRow.setText(date);
     timeRow.setText(time);
+    locRow.setText(location);
     Picasso.get()
             .load(img)
             .transform(new CropCircleTransformation())
@@ -61,12 +63,11 @@ public void setDetails(Context context, String title, String img,String status, 
     card.setRadius(50);
 
     card.setCardBackgroundColor(randomAndroidColor);
-    if (status=="1")
+    if (status.equals("No"))
         statusColor.setImageResource(R.drawable.grey);
-    else if (status=="2")
+    else if (status.equals("Yes"))
         statusColor.setImageResource(R.drawable.green);
     else
-
         statusColor.setImageResource(R.drawable.grey);
 }
     private ViewHolder.ClickListner mClick;

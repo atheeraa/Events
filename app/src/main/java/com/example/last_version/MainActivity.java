@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     protected void populateViewHolder(ViewHolder viewHolder, Model model, int position) {
 
-                        viewHolder.setDetails(getApplicationContext(),model.getTitle(),model.getImg(),model.getStatus(),model.getTime(),model.getDate(),model.getBy());
+                        viewHolder.setDetails(getApplicationContext(),model.getTitle(),model.getImg(),model.getStatus(),model.getTime(),model.getDate(),model.getBy(),model.getLocation());
                         // dd=model.getDesc();
 
                     }
@@ -77,12 +77,13 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onItemClick(View view, int position) {
 
-                                TextView titleView, timeView, byView, dateView;
+                                TextView titleView, timeView, byView, dateView , locView;
                                 ImageView imageView, statusView ;
                                 titleView = view.findViewById(R.id.titleRow);
                                 timeView=view.findViewById(R.id.timeRow);
                                 byView=view.findViewById(R.id.byRow);
                                 dateView = view.findViewById(R.id.dateRow);
+                                locView = view.findViewById(R.id.location);
                                 imageView = view.findViewById(R.id.imgRow);
                                 statusView = view.findViewById(R.id.status);
 
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                                 String timeString = timeView.getText().toString();
                                 String byString = byView.getText().toString();
                                 String dateString = dateView.getText().toString();
+                                String locString = locView.getText().toString();
 
 
                                 Drawable drawable = imageView.getDrawable();
@@ -114,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                                 intent.putExtra("date",dateString);
                                 intent.putExtra("by",byString);
                                 intent.putExtra("desc",model.getDesc());
+                                intent.putExtra("location",locString);
 
                                intent.putExtra("status",model.getStatus());
                                 startActivity(intent);
@@ -146,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
                 ) {
                     @Override
                     protected void populateViewHolder(ViewHolder viewHolder, Model model, int position) {
-                        viewHolder.setDetails(getApplicationContext(),model.getTitle(), model.getImg(),model.getStatus(),model.getTime(),model.getDate(),model.getBy());
+                        viewHolder.setDetails(getApplicationContext(),model.getTitle(), model.getImg(),model.getStatus(),model.getTime(),model.getDate(),model.getBy(),model.getLocation());
                     }
 
                     @Override
@@ -157,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                             public void onItemClick(View view, int position) {
 
 
-                                TextView titleView, timeView, byView, dateView, statusView;
+                                TextView titleView, timeView, byView, dateView,locView,  statusView;
                                 ImageView imageView;
 
                                 titleView = view.findViewById(R.id.titleRow);
@@ -166,6 +169,7 @@ public class MainActivity extends AppCompatActivity {
                                 dateView = view.findViewById(R.id.dateRow);
                                 imageView = view.findViewById(R.id.imgRow);
                                 statusView = view.findViewById(R.id.status);
+                                locView = view.findViewById(R.id.location);
 
 
                                 String titleString = titleView.getText().toString();
@@ -173,6 +177,7 @@ public class MainActivity extends AppCompatActivity {
                                 String byString = byView.getText().toString();
                                 String dateString = dateView.getText().toString();
                                 String statusString = statusView.getText().toString();
+                                String locString = locView.getText().toString();
 
                                 Drawable drawable = imageView.getDrawable();
                                 Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
@@ -197,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
 
                                 intent.putExtra("desc",model.getDesc());
                                 intent.putExtra("status",model.getStatus());
+                                intent.putExtra("location",locString);
                                 startActivity(intent);
 
 
@@ -224,7 +230,6 @@ public class MainActivity extends AppCompatActivity {
                 firebaseSearch(s);
                 return false;
             }
-
             @Override
             public boolean onQueryTextChange(String s) {
                 firebaseSearch(s);
@@ -236,16 +241,12 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         int id = item.getItemId();
-
         if (id == R.id.search){
-
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
-
  }
 
 

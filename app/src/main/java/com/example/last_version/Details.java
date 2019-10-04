@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 public class Details extends AppCompatActivity {
 
-    TextView titleV, descV, dateV, timeV, byV;
+    TextView titleV, descV, dateV, timeV, byV, locV;
     ImageView imgV;
-    String desc, time, date, by, title;
+    String desc, time, date, by, title, location;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +29,8 @@ public class Details extends AppCompatActivity {
         timeV = findViewById(R.id.timeD);
         byV = findViewById(R.id.byD);
         imgV = findViewById(R.id.imgD);
+        locV=findViewById(R.id.location);
+
 
 
 
@@ -42,12 +44,14 @@ public class Details extends AppCompatActivity {
         time = getIntent().getStringExtra("time");
         date = getIntent().getStringExtra("date");
         by = getIntent().getStringExtra("by");
-
+        location = getIntent().getStringExtra("location");
 
         descV.setText(desc);
         dateV.setText(date);
         timeV.setText(time);
         byV.setText(by);
+        locV.setText(location);
+
         imgV.setImageBitmap(bitmap);
 
         Button button = (Button) findViewById(R.id.ticket);

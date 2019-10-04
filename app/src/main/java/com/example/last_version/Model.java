@@ -8,6 +8,11 @@ String title;
     String time;
     String date;
 
+    public String getLocation() {
+        return location;
+    }
+
+    String location;
     public String getStatus() {
         return status;
     }
