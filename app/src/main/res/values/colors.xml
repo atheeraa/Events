@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="semiTransparentColor">#20ffffff</color>
+
+        <color name="bright_pink">#12ff007f</color>
+        <color name="red">#0fff0000</color>
+        <color name="orange">#13ff7f00</color>
+        <color name="yellow">#32f5f505</color>
+        <color name="chartreuse">#107cf900</color>
+        <color name="cyan">#14079696</color>
+        <color name="blue">#110000ff</color>
+        <color name="violet">#117f00ff</color>
+
+        <array name="rainbow">
+            <item>@color/bright_pink</item>
+            <item>@color/red</item>
+            <item>@color/orange</item>
+            <item>@color/yellow</item>
+            <item>@color/chartreuse</item>
+
+            <item>@color/cyan</item>
+
+            <item>@color/blue</item>
+            <item>@color/violet</item>
+        </array>
+</resources>
