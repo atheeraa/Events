@@ -1,8 +1,12 @@
 package com.example.last_version;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,8 +14,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Details extends AppCompatActivity {
+
+    public static final String CHANNEL_ID = "channel_id";
 
     TextView titleV, descV, dateV, timeV, byV, locV;
     ImageView imgV;
@@ -63,7 +70,6 @@ public class Details extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }
 
