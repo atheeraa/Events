@@ -28,7 +28,18 @@
         android:textColor="#848484"
         android:textStyle="bold"
         />
+<TextView
+        android:layout_margin="100dp"
+        android:id="@+id/empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:textSize="18dp"
+        android:text="No internet connection"
+        android:textAppearance="?android:textAppearanceMedium"/>
 
+    <!-- Loading indicator is only shown before the first load -->
 
 
 

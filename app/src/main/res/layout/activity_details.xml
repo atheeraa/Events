@@ -15,8 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:id="@+id/imgD"
-        android:padding="20dp"
-        android:src="@drawable/f"/>
+        android:padding="20dp"/>
 
 
     <TextView

@@ -1,4 +1,4 @@
-package com.example.last_version;
+package passion.events.last_version;
 
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -22,7 +22,7 @@ public class Details extends AppCompatActivity {
 
     TextView titleV, descV, dateV, timeV, byV, locV;
     ImageView imgV;
-    String desc, time, date, by, title, location;
+    String desc, time, date, by, title, location, status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +52,7 @@ public class Details extends AppCompatActivity {
         date = getIntent().getStringExtra("date");
         by = getIntent().getStringExtra("by");
         location = getIntent().getStringExtra("location");
+    status = getIntent().getStringExtra("status");
 
         descV.setText(desc);
         dateV.setText(date);
@@ -61,14 +62,22 @@ public class Details extends AppCompatActivity {
 
         imgV.setImageBitmap(bitmap);
 
-        Button button = (Button) findViewById(R.id.ticket);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
+        
+        final Button button = (Button) findViewById(R.id.ticket);
+       button.setOnClickListener(new View.OnClickListener() {
+                    @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),Ticket.class);
+
+                if(status.equals("No")){
+                    button.setEnabled(false);
+                    Toast.makeText(getApplicationContext(),"انتهى وقت هذه الفعالية",Toast.LENGTH_LONG).show();
+                }
+                else {
+                  Intent intent = new Intent(getApplicationContext(),Ticket.class);
                 intent.putExtra("eventName", title);
-                startActivity(intent);
-            }
+                intent.putExtra("status",status);
+                startActivity(intent);}  
+                          }
         });
 
     }

@@ -11,4 +11,12 @@
         app:showAsAction="always"
         app:actionViewClass="android.support.v7.widget.SearchView"/>
 
+    <item
+
+        android:id="@+id/aboutUs"
+        android:title="about us"
+        android:icon="@drawable/ic_people_black_24dp"
+        app:showAsAction="always"
+        />
+
 </menu>

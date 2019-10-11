@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:background="@drawable/bg2"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".aboutUs"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="عمل على هذا التطبيق "
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="في البرمجة:"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="مها أحمد"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="i.maaasiri@gmail.com"
+            android:textSize="18sp"
+            android:clickable="true"
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  أثير عبدالله"
+            android:textSize="18sp"
+            android:layout_gravity="center"            />
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="atheerabdullaha@outlook.com"
+            android:textSize="18sp"
+            android:clickable="true"
+
+            />
+
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ريم عبدالله"
+            android:layout_gravity="center"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="437805329@kku.edu.sa"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:clickable="true"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="في التصميم:"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#000"/>
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="عبدالله أحمد"
+        android:textSize="18sp"
+        />
+
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="asseria737@gmail.com"
+        android:textSize="18sp"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="لاقتراحاتكم و آرائكم الرجاء التواصل على الإيميل "
+        android:textSize="20sp"
+        android:textAlignment="center"
+        />
+
+    <TextView
+        android:layout_margin="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Events.kku@gmail.com"
+        android:clickable="true"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        />
+</LinearLayout>
+</ScrollView>

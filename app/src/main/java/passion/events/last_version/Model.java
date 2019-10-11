@@ -1,4 +1,4 @@
-package com.example.last_version;
+package passion.events.last_version;
 
 public class Model {
 

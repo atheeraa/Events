@@ -1,10 +1,11 @@
-package com.example.last_version;
+package passion.events.last_version;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.ConnectivityManager;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -32,6 +33,9 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+    TextView mEmptyStateTextView;
+Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setTitle("Passion");
         recyclerView = (RecyclerView) findViewById(R.id.recylerView);
         recyclerView.setHasFixedSize(true);
-
+        mEmptyStateTextView = (TextView) findViewById(R.id.empty_view);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
         mLayoutManager.setReverseLayout(true);
         mLayoutManager.setStackFromEnd(true);
@@ -51,8 +55,18 @@ public class MainActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Events");
 
-    }
+        if (isOnline()) {
+            mEmptyStateTextView.setVisibility(View.GONE);
 
+        } else {
+            mEmptyStateTextView.setText(R.string.no_internet_connection);
+
+        }
+    }
+    public boolean isOnline() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting();
+    }
     private void firebaseSearch(String searchBar){
         Query search = databaseReference.orderByKey().startAt(searchBar).endAt(searchBar + "\uf88f");
         FirebaseRecyclerAdapter<Model, ViewHolder>  firebaseRecyclerAdapter=
@@ -65,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     protected void populateViewHolder(ViewHolder viewHolder, Model model, int position) {
 
-                        viewHolder.setDetails(getApplicationContext(),model.getTitle(),model.getImg(),model.getStatus(),model.getTime(),model.getDate(),model.getBy(),model.getLocation());
+                        viewHolder.setDetails(getApplicationContext(), model.getTitle(), model.getImg(), model.getStatus(), model.getTime(), model.getDate(), model.getBy(), model.getLocation());
                         // dd=model.getDesc();
 
                     }
@@ -218,7 +232,6 @@ public class MainActivity extends AppCompatActivity {
                 };
         recyclerView.setAdapter(firebaseRecyclerAdapter);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
@@ -242,12 +255,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
         if (id == R.id.search){
             return true;
         }
+
+        else if(id == R.id.aboutUs){
+            Intent intent = new Intent(getApplicationContext(), aboutUs.class);
+            startActivity(intent);
+        }
+
         return super.onOptionsItemSelected(item);
     }
- }
+
+}
+
+
+
+
 
 
 

@@ -42,6 +42,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555883646670:android:b9454d6676cb39b5c10a9f",
+        "android_client_info": {
+          "package_name": "passion.events.last_version"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555883646670-gorkhk8cqv69t2s2dab3gqquqoe01kj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "passion.events.last_version",
+            "certificate_hash": "572f69ee4da2018edd28102ae4c352611aa7c476"
+          }
+        },
+        {
+          "client_id": "555883646670-511j97i2m44dv3ved7fhbm1f4fglv6pn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3PSRfzwahnvdf_WSlRkvjEg_an2h2UQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555883646670-511j97i2m44dv3ved7fhbm1f4fglv6pn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

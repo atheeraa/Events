@@ -1,4 +1,4 @@
-package com.example.last_version;
+package passion.events.last_version;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;
@@ -18,7 +18,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void run(){
                 try{
-                    sleep(3000);
+                    sleep(1500);
                     Intent intent= new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                     finish();
