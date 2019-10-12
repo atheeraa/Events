@@ -33,8 +33,7 @@
             android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:textSize="26dp"
         android:gravity="center"
         android:layout_marginLeft="16dp"
@@ -49,8 +48,8 @@
             <TextView
                 android:id="@+id/byRow"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+
                 android:layout_gravity="end"
                 android:layout_marginLeft="32dp"
                 android:layout_marginTop="8dp"
@@ -59,12 +58,7 @@
                 android:textColor="#585757"
                 android:textSize="18dp"
                 android:textStyle="bold" />
-            <TextView
-                android:visibility="invisible"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/location"
-                />
+
 </LinearLayout>
 
     </LinearLayout>
@@ -73,6 +67,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="32dp"
        >
 
         <TextView
@@ -86,8 +81,7 @@
             android:textFontWeight="500"
             android:textColor="#585757"
             android:id="@+id/timeRow"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
+
             android:paddingLeft="20dp"
             android:text="Test"
             />
@@ -103,25 +97,27 @@
             android:id="@+id/dateRow"
             android:text="Test"
             android:paddingLeft="20dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="32dp"
 
             />
         <LinearLayout
             android:layout_width="0dp"
         android:layout_weight="1"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
 
             <ImageView
+
             android:layout_width="20dp"
             android:layout_height="20dp"
+                android:layout_marginLeft="40dp"
             android:id="@+id/statusColor"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="32dp"
             />
         </LinearLayout>
 
-
+<TextView
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:id="@+id/location"/>
 
     </LinearLayout>
 

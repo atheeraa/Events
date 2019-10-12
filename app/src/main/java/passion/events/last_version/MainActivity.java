@@ -174,7 +174,7 @@ Context context;
 
 
                                 TextView titleView, timeView, byView, dateView,locView;
-                                ImageView imageView, statusView;
+                                ImageView imageView,statusView;
 
                                 titleView = view.findViewById(R.id.titleRow);
                                 timeView=view.findViewById(R.id.timeRow);
