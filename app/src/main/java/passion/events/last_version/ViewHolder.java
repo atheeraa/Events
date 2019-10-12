@@ -42,7 +42,7 @@ public void setDetails(Context context, String title, String img,String status, 
     TextView locRow = (TextView) mView.findViewById(R.id.location);
     ImageView imgRow = (ImageView) mView.findViewById(R.id.imgRow);
     ImageView statusColor = (ImageView) mView.findViewById(R.id.statusColor) ;
-    TextView statusRow = (TextView) mView.findViewById(R.id.status);
+
 
     titleRow.setText(title);
     byRow.setText(by);

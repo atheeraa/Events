@@ -68,7 +68,7 @@ Context context;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnectedOrConnecting();
     }
     private void firebaseSearch(String searchBar){
-        Query search = databaseReference.orderByKey().startAt(searchBar).endAt(searchBar + "\uf88f");
+        Query search = databaseReference.orderByChild("title").startAt(searchBar).endAt(searchBar + "\uf88f");
         FirebaseRecyclerAdapter<Model, ViewHolder>  firebaseRecyclerAdapter=
                 new FirebaseRecyclerAdapter<Model, ViewHolder>(
                         Model.class,
@@ -83,7 +83,6 @@ Context context;
                         // dd=model.getDesc();
 
                     }
-
                     @Override
                     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                         final ViewHolder viewHolder = super.onCreateViewHolder(parent,viewType);
@@ -91,48 +90,48 @@ Context context;
                             @Override
                             public void onItemClick(View view, int position) {
 
-                                TextView titleView, timeView, byView, dateView , locView;
-                                ImageView imageView, statusView ;
+
+                                TextView titleView, timeView, byView, dateView,locView;
+
+                                ImageView imageView, statusView;;
+
                                 titleView = view.findViewById(R.id.titleRow);
                                 timeView=view.findViewById(R.id.timeRow);
                                 byView=view.findViewById(R.id.byRow);
                                 dateView = view.findViewById(R.id.dateRow);
-                                locView = view.findViewById(R.id.location);
                                 imageView = view.findViewById(R.id.imgRow);
-                                statusView = view.findViewById(R.id.status);
+                                statusView = view.findViewById(R.id.statusColor);
+                                locView = view.findViewById(R.id.location);
+
 
                                 String titleString = titleView.getText().toString();
                                 String timeString = timeView.getText().toString();
                                 String byString = byView.getText().toString();
                                 String dateString = dateView.getText().toString();
-                                String locString = locView.getText().toString();
-
+                                 String locString = locView.getText().toString();
 
                                 Drawable drawable = imageView.getDrawable();
-                                Drawable drawableStatus = statusView.getDrawable();
+
                                 Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
-                                Bitmap bitmapStatus = ((BitmapDrawable)drawableStatus).getBitmap();
 
                                 Intent intent = new Intent(view.getContext(), Details.class);
                                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
 
                                 bitmap.compress(Bitmap.CompressFormat.PNG, 100,stream);
 
-                                 byte[] bytes = stream.toByteArray();
+                                bitmap.compress(Bitmap.CompressFormat.PNG, 100,stream);
+                                byte[] bytes = stream.toByteArray();
                                 intent.putExtra("image",bytes);
-
-
-
 
                                 Model model = getItem(position);
                                 intent.putExtra("title",titleString);
                                 intent.putExtra("time",timeString);
                                 intent.putExtra("date",dateString);
                                 intent.putExtra("by",byString);
-                                intent.putExtra("desc",model.getDesc());
-                                intent.putExtra("location",locString);
 
-                               intent.putExtra("status",model.getStatus());
+                                intent.putExtra("desc",model.getDesc());
+                                intent.putExtra("status",model.getStatus());
+                                intent.putExtra("location",locString);
                                 startActivity(intent);
 
 
@@ -174,15 +173,15 @@ Context context;
                             public void onItemClick(View view, int position) {
 
 
-                                TextView titleView, timeView, byView, dateView,locView,  statusView;
-                                ImageView imageView;
+                                TextView titleView, timeView, byView, dateView,locView;
+                                ImageView imageView, statusView;
 
                                 titleView = view.findViewById(R.id.titleRow);
                                 timeView=view.findViewById(R.id.timeRow);
                                 byView=view.findViewById(R.id.byRow);
                                 dateView = view.findViewById(R.id.dateRow);
                                 imageView = view.findViewById(R.id.imgRow);
-                                statusView = view.findViewById(R.id.status);
+                                statusView = view.findViewById(R.id.statusColor);
                                 locView = view.findViewById(R.id.location);
 
 
@@ -190,14 +189,12 @@ Context context;
                                 String timeString = timeView.getText().toString();
                                 String byString = byView.getText().toString();
                                 String dateString = dateView.getText().toString();
-                                String statusString = statusView.getText().toString();
+
                                 String locString = locView.getText().toString();
 
                                 Drawable drawable = imageView.getDrawable();
+
                                 Bitmap bitmap = ((BitmapDrawable)drawable).getBitmap();
-
-
-
 
                                 Intent intent = new Intent(view.getContext(), Details.class);
                                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
